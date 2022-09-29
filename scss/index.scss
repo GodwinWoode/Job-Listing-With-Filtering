@@ -1,0 +1,105 @@
+@import './variables';
+@import './config';
+@import './main';
+
+
+body{
+    background: $background;
+    font-family: 'League Spartan';
+}
+
+.new, .featured{
+    color: $white;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.company, button{
+    color: $green;
+    font-weight: 700;
+}
+
+.company{
+    font-size: 18px;
+}
+
+button{
+    font-size: 16px;
+}
+
+.title{
+    color: $black;
+    font-weight: 700;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.posting{
+    color: $ash;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.new{
+    width: 51px;
+    height: 24px;
+    background: $green;
+    border-radius: 12px;
+    border: none;
+}
+
+.featured{
+    width: 89px;
+    height: 24px;
+    background: $black;
+    border-radius: 12px;
+    border: none;
+}
+
+.dot{
+    color: $dot;
+}
+
+.skill, .search_close{
+    background: $button;
+    border: $button;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    transition: all 1s ease;
+    cursor: pointer;
+    height: 25px;
+
+    @include pc{
+        &:hover{
+            background: $green;
+            color: $white;
+            
+        }
+    }
+}
+
+.search_close::after{
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: $green;
+    content: "";
+    right: 0;
+    top: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-image: url('../images/icon-remove.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.search_close:hover::after{
+    background-color: $black;
+}
+
+.oval-image{
+    width: 88px;
+    height: 88px;
+}

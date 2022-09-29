@@ -1,0 +1,242 @@
+header{
+    height: 156px;
+    background: $header-background;
+
+    .header-pc{
+        width: 100%;
+        height: 156px;
+    }
+
+    .header-mobile{
+        display: none;
+    }
+
+    @include mobile{
+        .header-mobile{
+            display: block;
+            width: 100vw;
+            height: 156px;
+        }
+
+        .header-pc{
+            display: none;
+        }
+    }
+}
+
+// Filtering
+.filter{
+    max-width: 90%;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+
+    .filter_item{
+        width: 100%;
+        height: auto;
+        min-height: 70px;
+        background-color: $white;
+        border-radius: 5px;
+        box-shadow: 0 10px 10px $shadow;
+        padding: 1.25rem 1.5rem;
+        box-sizing: border-box;
+        margin-top: -36px;
+        opacity: 1;
+        display: flex;
+        justify-content: space-between;
+        transition: opacity 1s;
+
+        .search_close{
+            position: relative;
+            display: inline-block;
+            padding-right: 33px;
+            margin: 0 0.5rem;
+
+            &:hover{
+                background: $button;
+                color: $green;
+            }
+            
+            @include mobile{
+                margin: 0.3rem;
+            }
+        }
+
+        .clear{
+            // margin-left: 50px;
+            background-color: transparent;
+            color: $green;
+            border: none;
+            font-size: 16px;
+            font-weight: 700;
+            outline: none;
+            transition: all 1s ease;
+            cursor: pointer;
+    
+            @include pc{
+                &:hover{
+                    text-decoration: underline;
+                    transition: all 1s ease;
+                }
+            }
+        }
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+// Main Styling
+main{
+    display: grid;
+    gap: 1.5rem;
+    padding: 4.75rem 0;
+
+    @include mobile{
+        gap: 3rem;
+    }
+
+    @include tablet{
+        gap: 2.5rem;
+    }
+
+
+    .card{
+        justify-self: center;
+        width: 90%;
+        height: 9.7rem;
+        background: $white;
+        border-radius: 5px;
+        display: grid;
+        box-shadow: 0 10px 10px 0 $shadow;
+
+        @include tablet{
+            height: 14rem;
+        }
+
+        @include mobile{
+            height: 17.5rem;
+        }
+
+        .state{
+            place-self: center;
+            display: flex;
+            width: 95%;
+            height: 5.6rem;
+            justify-content: space-between;
+
+            @include tablet{
+                gap: 2rem;
+
+
+                .oval-image{
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+
+            @include mobile{
+                height: 16rem;
+                display: grid;
+                padding: 0 1rem;
+
+                .oval-image{
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
+            .info{
+                display: flex;
+                gap: 2rem;
+
+                @include mobile{
+                    position: relative;
+                    display: grid;
+                    gap: 1rem;
+                    border-bottom: 1px solid $ash;
+                    padding-bottom: 1.2rem;
+                    margin-bottom: -1rem;
+                    bottom: 2.2rem;
+                }
+
+                @include tablet{
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: center;
+                    gap: 1rem;
+                }
+
+                .content{
+                    display: grid;
+                    align-items: center;
+                    gap: 0.6rem;
+        
+                    .item{
+                        display: flex;
+                        gap: 0.9rem;
+                        align-items: center;
+                    }
+        
+                    .title{
+                        align-items: center;
+                        transition: all 1s ease;
+
+                        &:hover{
+                            color: $green;
+                        }
+                    }
+        
+                    .posting{
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+                }
+            }
+    
+            .skills{
+                align-self: center;
+                display: flex;
+                gap: 1rem;
+                right: 8rem;
+
+                @include mobile{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                @include tablet{
+                    width: 50%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                    justify-content: right;
+                }
+            }
+    
+            hr{
+                display: none;
+
+            }
+        }
+    }
+
+    #id1, #id2{
+        border-left: 5px solid $green;
+    }
+}
+
+.attribution{
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    
+    a{
+        text-decoration: none;
+    }
+
+    @include mobile{
+        font-size: 0.8rem;
+    }
+}
